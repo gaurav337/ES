@@ -2,11 +2,34 @@
 > **Course:** CSN15402 — Embedded Systems  
 > **Target Institution:** Motilal Nehru National Institute of Technology (MNNIT) Allahabad  
 > **Target Degree / Semester:** B.Tech V Semester (Computer Science & Engineering)  
-> **Core Texts & Materials Integrated:**  
-> - Unit III Lecture Slides: Slide 2 (Jump/Loop/Call), Slide 3 (Assembly & Addressing), Slide 4 (Delays & I/O) — Dr. Divyansh Thakur  
-> - Unit IV Lecture Slides: 8051 C Programming, Timers/Counters, Serial Communication, Interrupts & Data Manipulation — Dr. Divyansh Thakur  
-> - Reference Lecture Series Notes: Bharat Acharya Education (Mumbai) — 8051 Core Architecture, Instruction Set, Peripheral Interfacing (LCD, Keypad, ADC 0808, DAC 0808, Stepper Motor, DC Motor, 8255 PPI)  
-> - Official Examination Reference: End-Semester Examination 2025-26 Question Paper & Detailed Solutions  
+> **Primary Exam Syllabus Sources (Main Directory Slides & Official Paper):**  
+> - **SLIDE 2.pdf** (Unit III): Jump, Loop, and Call Instructions — Dr. Divyansh Thakur  
+> - **SLIDE 3.pdf** (Unit III): 8051 Assembly Language, Addressing Modes, I/O Port Programming — Dr. Divyansh Thakur  
+> - **SLIDE 4.pdf** (Unit III): Time Delay Generation, I/O Port Programming, Addressing Modes — Dr. Divyansh Thakur  
+> - **Unit 4.pdf** (Unit IV): 8051 C Programming, Timers & Counters, Serial Port, Interrupts, Data Manipulation — Dr. Divyansh Thakur  
+> - **Official 2025-26 End-Semester Examination Paper & Official Solutions**  
+>  
+> *(Note: Peripheral interfacing topics like ADC, DAC, Stepper Motor, and 8255 PPI from the `es/` reference folder are placed in the Supplementary Appendix at the end, so your core study focuses 100% on Dr. Divyansh Thakur's core lecture slides and the exam pattern).*
+
+---
+
+## SYLLABUS ALIGNMENT MAP (100% EXAM VERIFIED)
+
+| Module in this Document | Primary Source from Main Directory | Endsem 2025-26 Exam Question Mapping |
+|-------------------------|------------------------------------|--------------------------------------|
+| **Module 1: Architecture & Memory** | SLIDE 3, SLIDE 4, Unit 4 | Memory maps, SFRs, Port circuits, Internal RAM |
+| **Module 2: Assembly & Addressing** | SLIDE 3, SLIDE 4, Unit 4 | Addressing modes, Rotations/Swaps (**Q2a**), Flags |
+| **Module 3: Program Control (Jumps/Calls)** | SLIDE 2, SLIDE 3 | Stack mechanics (**Q1a**), CJNE Carry flags (**Q1c**), SJMP offset math |
+| **Module 4: Machine Cycles & Delays** | SLIDE 4, Unit 4 | 22 MHz LED Blink software delay (**Q1b**), Loop cycle counts |
+| **Module 5: Hardware Timers & Counters** | Unit 4 (Sec 7 & 8), SLIDE 4 | Mode 1 50ms delay (**Q3a**), Waveform & Duty Cycle (**Q3c**), Counter mode |
+| **Module 6: UART Serial Communication** | Unit 4 (Sec 9 & 10) | SMOD baud rate derivation (**Q4a**), PC terminal full-duplex (**Q4b**), Baud display (**Q4c**) |
+| **Module 7: Interrupt System & ISRs** | Unit 4 (Sec 11) | External interrupt waveform (**Q5a**), Memory trace at RETI (**Q5b**), Priorities |
+| **Module 8: Embedded C (Keil C51)** | Unit 4 (Sec 1 to 6) | C data types, Bitwise ops, Port I/O, ROM Checksum in C (**Q2b/c**) |
+| **Module 9: Data Manipulation & Pointers**| Unit 4 (Sec 12) | R0/R1 pointers, Block transfer (overlap problem), Series, Palindrome |
+| **Module 10: 2025-26 Exam Complete Solutions**| Endsem 2025-26 Paper | Full step-by-step solutions to Q1, Q2, Q3, Q4, Q5 with marking schemes |
+| **Module 11: High-Yield Practice Bank** | All Main Slides & Exam | 25+ exam variations with full step-by-step solutions |
+| **Module 12: Quick Revision Cheat Sheets** | All Main Slides & Exam | Master instruction table, SFR table, TMOD/SCON lookup, Formula vault |
+| **Module 13: Supplemental Peripherals (Appendix)**| `es/` Reference Notes | LCD, Keypad, ADC 0808, DAC 0808, Stepper Motor, 8255 PPI (for reference) |
 
 ---
 
@@ -104,41 +127,41 @@
   - 9.7 Palindrome Verification Program (Example 12.5 Inward Pointers & B Register Matching)
   - 9.8 Common Data-Handling Skeleton & Section 12 Review Questions
 
-- **[MODULE 10: Interfacing Real-World Peripherals](#module-10-interfacing-real-world-peripherals)**
-  - 10.1 16x2 Alphanumeric LCD Display Interfacing (8-bit & 4-bit Modes, Pinout, Commands, Assembly & C Drivers)
-  - 10.2 4x4 Matrix Keyboard Interfacing (Scanning Algorithm, Grounding Rows, Reading Columns, Debouncing)
-  - 10.3 8-Bit ADC 0808/0809 Interfacing & LM35 Temperature Sensor (Pinout, Timing, SOC/EOC Handshaking)
-  - 10.4 8-Bit DAC 0808 Interfacing & Waveform Synthesis (Square, Sawtooth, Triangular, Staircase, Sine)
-  - 10.5 Stepper Motor Control with ULN2003 Driver (Wave, Full, Half Step Sequences, Step Angle to Degree Math)
-  - 10.6 DC Motor Interfacing with L293D H-Bridge Driver & Relays (Direction Control & PWM Speed)
-  - 10.7 8255 Programmable Peripheral Interface (PPI) (Pinout, Control Word Register, Modes 0/1/2/BSR, Memory Mapping)
+- **[MODULE 10: Complete Solutions to 2025-26 Endsem Examination with Marking Insights](#module-10-complete-solutions-to-2025-26-endsem-examination-with-marking-insights)**
+  - 10.1 Question 1: (a) Stack/SP Step-by-Step Tracing; (b) LED Blink 22 MHz Delay; (c) CJNE Carry Flag Rules
+  - 10.2 Question 2: (a) Rotate/Swap Bit Tracing; (b) ROM Checksum Calculation; (c) ROM Checksum Verification Program
+  - 10.3 Question 3: (a) 16-Bit Timer 0 Mode 1 50ms Delay Math; (b) 7-Segment Display Counter; (c) Waveform Frequency & Duty Cycle
+  - 10.4 Question 4: (a) SMOD Baud Rate Derivation; (b) Full-Duplex PC Terminal Program; (c) Display Baud Rate on Ports
+  - 10.5 Question 5: (a) External Interrupt Waveform Generator; (b) Memory Map Trace at RETI with In-Service Latch
 
-- **[MODULE 11: Complete Solutions to 2025-26 Endsem Examination with Marking Insights](#module-11-complete-solutions-to-2025-26-endsem-examination-with-marking-insights)**
-  - 11.1 Question 1: (a) Stack/SP Step-by-Step Tracing; (b) LED Blink 22 MHz Delay; (c) CJNE Carry Flag Rules
-  - 11.2 Question 2: (a) Rotate/Swap Bit Tracing; (b) ROM Checksum Calculation; (c) ROM Checksum Verification Program
-  - 11.3 Question 3: (a) 16-Bit Timer 0 Mode 1 50ms Delay Math; (b) 7-Segment Display Counter; (c) Waveform Frequency & Duty Cycle
-  - 11.4 Question 4: (a) SMOD Baud Rate Derivation; (b) Full-Duplex PC Terminal Program; (c) Display Baud Rate on Ports
-  - 11.5 Question 5: (a) External Interrupt Waveform Generator; (b) Memory Map Trace at RETI with In-Service Latch
+- **[MODULE 11: High-Yield Practice Question Bank & New Variation Practice Problems](#module-11-high-yield-practice-question-bank--new-variation-practice-problems)**
+  - 11.1 Category A: Architecture, Memory Organization & Bit Address Variations (5 Problems)
+  - 11.2 Category B: Assembly Language, Arithmetic, Rotations & Jumps (5 Problems)
+  - 11.3 Category C: Hardware Timers & Precision Delay Calculations (6 Problems Across 11.0592, 12, 22, 24 MHz)
+  - 11.4 Category D: UART Protocols, Baud Rates & PC Interfacing (5 Problems)
+  - 11.5 Category E: Interrupt Service Routines, Nesting & Priorities (5 Problems)
 
-- **[MODULE 12: High-Yield Practice Question Bank & New Variation Practice Problems](#module-12-high-yield-practice-question-bank--new-variation-practice-problems)**
-  - 12.1 Category A: Architecture, Memory Organization & Bit Address Variations (5 Problems)
-  - 12.2 Category B: Assembly Language, Arithmetic, Rotations & Jumps (5 Problems)
-  - 12.3 Category C: Hardware Timers & Precision Delay Calculations (6 Problems Across 11.0592, 12, 22, 24 MHz)
-  - 12.4 Category D: UART Protocols, Baud Rates & PC Interfacing (5 Problems)
-  - 12.5 Category E: Interrupt Service Routines, Nesting & Priorities (5 Problems)
-  - 12.6 Category F: Peripheral Interfacing (LCD, Keypad, ADC, DAC, Stepper Motor, DC Motor — 5 Problems)
+- **[MODULE 12: Quick Revision Master Tables, Cheat Sheets & Formula Vault](#module-12-quick-revision-master-tables-cheat-sheets--formula-vault)**
+  - 12.1 Complete 8051 Instruction Set Reference with Machine Cycle Counts & Bytes
+  - 12.2 Master Special Function Register (SFR) Table (Addresses, Reset values, Bit-addressability)
+  - 12.3 5 Addressing Modes Summary & Examples
+  - 12.4 Complete TMOD & TCON Configuration Lookup Tables
+  - 12.5 Master Baud Rate vs TH1 Lookup Table (with SMOD=0 and SMOD=1)
+  - 12.6 7-Segment Display Encoding Table (Common Cathode & Common Anode)
+  - 12.7 Standard ASCII Code Reference (0 to 127)
+  - 12.8 8051 Memory Map Quick Diagram
+  - 12.9 Formula Vault (All mathematical equations for delays, timers, baud rates, step angles)
+  - 12.10 Top 15 Exam Traps & Mistakes to Avoid
 
-- **[MODULE 13: Quick Revision Master Tables, Cheat Sheets & Formula Vault](#module-13-quick-revision-master-tables-cheat-sheets--formula-vault)**
-  - 13.1 Complete 8051 Instruction Set Reference with Machine Cycle Counts & Bytes
-  - 13.2 Master Special Function Register (SFR) Table (Addresses, Reset values, Bit-addressability)
-  - 13.3 5 Addressing Modes Summary & Examples
-  - 13.4 Complete TMOD & TCON Configuration Lookup Tables
-  - 13.5 Master Baud Rate vs TH1 Lookup Table (with SMOD=0 and SMOD=1)
-  - 13.6 7-Segment Display Encoding Table (Common Cathode & Common Anode)
-  - 13.7 Standard ASCII Code Reference (0 to 127)
-  - 13.8 8051 Memory Map Quick Diagram
-  - 13.9 Formula Vault (All mathematical equations for delays, timers, baud rates, step angles, ADC resolutions)
-  - 13.10 Top 15 Exam Traps & Mistakes to Avoid
+- **[MODULE 13 (SUPPLEMENTARY APPENDIX): Peripheral Interfacing Reference (from `es/` folder)](#module-13-supplementary-appendix-peripheral-interfacing-reference-from-es-folder)**
+  - *(Included for extra breadth from `es/` reference notes; not part of Dr. Divyansh Thakur's core slides)*
+  - 13.1 16x2 Alphanumeric LCD Display Interfacing (8-bit & 4-bit modes, Commands, Displaying "HELLO" & "Happy Diwali")
+  - 13.2 4x4 Matrix Keyboard Interfacing (Row scanning, Column sensing, Debouncing)
+  - 13.3 8-Bit ADC 0808/0809 Interfacing & LM35 Temperature Sensor
+  - 13.4 8-Bit DAC 0808 Interfacing & Waveform Synthesis (Square, Sawtooth, Triangular, Staircase, Sine)
+  - 13.5 Stepper Motor Control with ULN2003 Driver (Full Step, Half Step, Step Angle to Degree Math: 117° Rotation)
+  - 13.6 DC Motor Interfacing with L293D Driver & Relays
+  - 13.7 8255 Programmable Peripheral Interface (PPI) (Control Word Register, Modes 0/1/2, Memory Mapping)
 
 ---
 
@@ -3974,441 +3997,7 @@ NEXT:   ; (3) Do the work on ONE byte (@R0)
 
 
 
-# MODULE 10: INTERFACING REAL-WORLD PERIPHERALS
-
-## 9.1 16x2 Alphanumeric LCD Display Interfacing
-The 16x2 LCD based on the industry-standard **Hitachi HD44780** controller displays 2 lines of 16 ASCII characters.
-
-```mermaid
-flowchart LR
-    subgraph 8051 Microcontroller
-        P2["Port 2 (P2.0 - P2.7)"]
-        P10["P1.0 (RS Pin)"]
-        P11["P1.1 (R//W Pin)"]
-        P12["P1.2 (E Pin)"]
-    end
-
-    subgraph 16x2 LCD Module (HD44780)
-        D["Data Bus (D0 - D7)"]
-        RS["RS (Register Select)"]
-        RW["R//W (Read / Write)"]
-        E["E (Enable Latch Strobe)"]
-        VEE["VEE (Contrast Pin)"]
-    end
-
-    P2 --> D
-    P10 --> RS
-    P11 --> RW
-    P12 --> E
-```
-
-### Pin Functions of 16x2 LCD:
-* **Pin 1 ($V_{SS}$)**: Ground ($0	ext{V}$).
-* **Pin 2 ($V_{DD}$)**: Power supply ($+5	ext{V}$).
-* **Pin 3 ($V_{EE}$)**: Contrast adjustment voltage (connected to center tap of a $10	ext{ k}\Omega$ potentiometer between $V_{CC}$ and $GND$).
-* **Pin 4 ($RS$ - Register Select)**:
-  * **$RS = 0$**: Command / Instruction Register selected (to clear display, set cursor, initialize).
-  * **$RS = 1$**: Data Register selected (bytes written are displayed on screen as ASCII characters).
-* **Pin 5 ($R/\overline{W}$ - Read / Write)**:
-  * **$R/\overline{W} = 0$**: Write operation (8051 sends command or data to LCD).
-  * **$R/\overline{W} = 1$**: Read operation (8051 reads data or reads Busy Flag $BF$).
-* **Pin 6 ($E$ - Enable Strobe)**:
-  * High-to-Low transition latch clock. Data/Command present on $D_0-D_7$ is latched into the LCD on the **falling edge** of an Enable pulse (width $\ge 450	ext{ ns}$).
-* **Pins 7-14 ($D_0 - D_7$)**: 8-bit bidirectional data bus.
-* **Pins 15-16**: Backlight LED Anode ($+5	ext{V}$) and Cathode ($GND$).
-
-### Essential Command Hex Codes:
-| Command Hex | Action |
-|---|---|
-| **`38H`** | **Function Set**: 8-bit bus mode, 2 display lines, $5 	imes 7$ dot font |
-| **`0EH`** | Display ON, Cursor ON, Cursor Blink OFF |
-| **`0CH`** | Display ON, Cursor OFF |
-| **`01H`** | **Clear Entire Display Screen** and return cursor to Home ($00H$) |
-| **`06H`** | **Entry Mode**: Increment cursor position to the right after each character |
-| **`80H`** | Force cursor to beginning of **Line 1** (DDRAM address $00H$) |
-| **`C0H`** | Force cursor to beginning of **Line 2** (DDRAM address $40H$) |
-
-### Checking the Busy Flag (BF on Pin $D_7$):
-Before sending any command or character, the microcontroller must ensure the internal controller has finished processing the prior operation.
-* Read with $RS = 0$ and $R/\overline{W} = 1$.
-* If bit $D_7 = 1$, the LCD is **busy**; wait in loop.
-* If bit $D_7 = 0$, the LCD is ready for the next byte. Alternatively, a $2	ext{ ms}$ software delay can be used after each command.
-
----
-
-## 9.2 4x4 Matrix Keyboard Interfacing
-Keyboards arranged in an $X-Y$ matrix drastically reduce required I/O pins: 16 individual switches require 16 pins, whereas a $4 	imes 4$ matrix requires only **8 pins** (4 row outputs, 4 column inputs).
-
-```
-          P1.4 (Col 0)   P1.5 (Col 1)   P1.6 (Col 2)   P1.7 (Col 3)
-               |              |              |              |
-   P1.0 (R0) --+--[ '0' ]-----+--[ '1' ]-----+--[ '2' ]-----+--[ '3' ]--
-               |              |              |              |
-   P1.1 (R1) --+--[ '4' ]-----+--[ '5' ]-----+--[ '6' ]-----+--[ '7' ]--
-               |              |              |              |
-   P1.2 (R2) --+--[ '8' ]-----+--[ '9' ]-----+--[ 'A' ]-----+--[ 'B' ]--
-               |              |              |              |
-   P1.3 (R3) --+--[ 'C' ]-----+--[ 'D' ]-----+--[ 'E' ]-----+--[ 'F' ]--
-               |              |              |              |
-             [Pull-ups to +5V on Col lines P1.4 - P1.7]
-```
-
-### Complete 2-Step Key Detection & Identification Algorithm:
-1. **Step 1: Check if ANY Key is Pressed**:
-   * Ground all rows by outputting `0000B` on rows ($P1.0-P1.3 = 0$).
-   * Configure columns as inputs with pull-ups ($P1.4-P1.7 = 1$).
-   * Read columns: If all columns read `1` ($1111B$), no key is pressed. If any column reads `0`, a key is pressed!
-   * Call a $20	ext{ ms}$ software delay to eliminate switch contact bounce (**Debouncing**).
-2. **Step 2: Identify the Exact Key (Row & Column Scanning)**:
-   * Ground one row at a time while driving other rows HIGH:
-     * Ground Row 0 ($P1 = 1111\ 1110B$). Read columns. If a column is `0`, the key is in Row 0!
-     * Ground Row 1 ($P1 = 1111\ 1101B$). Read columns.
-     * Ground Row 2 ($P1 = 1111\ 1011B$). Read columns.
-     * Ground Row 3 ($P1 = 1111\ 0111B$). Read columns.
-   * Once row and column are known, look up the ASCII character from a ROM table!
-
----
-
-## 9.3 8-Bit Analog-to-Digital Converter (ADC 0808/0809) & LM35 Sensor
-
-The **ADC 0808 / 0809** is an 8-bit Successive Approximation Register (SAR) ADC featuring an 8-channel multiplexed analog input.
-
-```mermaid
-flowchart LR
-    LM35["LM35 Temp Sensor<br/>(10 mV / °C)"] --> IN0["IN0 Pin"]
-    
-    subgraph ADC 0808 / 0809
-        IN0
-        ABC["Address Lines (A, B, C)"]
-        ALE["ALE (Address Latch Enable)"]
-        SOC["START (Start of Conversion)"]
-        EOC["EOC (End of Conversion)"]
-        OE["OE (Output Enable)"]
-        DATA["Digital Output (D0 - D7)"]
-    end
-
-    subgraph 8051 Microcontroller
-        P0["Port 0 (D0 - D7)"]
-        P20["P2.0 (A)"]
-        P21["P2.1 (B)"]
-        P22["P2.2 (C)"]
-        P23["P2.3 (ALE & START)"]
-        P24["P2.4 (EOC)"]
-        P25["P2.5 (OE)"]
-    end
-
-    ABC <--> P20 & P21 & P22
-    ALE & SOC <--> P23
-    EOC --> P24
-    OE <-- P25
-    DATA --> P0
-```
-
-### Control Pins of ADC 0808:
-* **$A, B, C$**: 3-bit channel selector selecting analog input channel from $IN_0$ ($000B$) to $IN_7$ ($111B$).
-* **$ALE$ (Address Latch Enable)**: Latches channel address $A, B, C$ on LOW-to-HIGH edge.
-* **$START$ (Start of Conversion - SOC)**: HIGH-to-LOW pulse starts the conversion process. Typically tied directly to $ALE$.
-* **$EOC$ (End of Conversion)**: Output pin from ADC. Normally HIGH. Goes LOW immediately after conversion starts, and **returns HIGH** when conversion finishes and the 8-bit result is ready in the internal register.
-* **$OE$ (Output Enable)**: Active-HIGH input to ADC. Driving $OE = 1$ places digital outputs $D_0-D_7$ onto the 8051 bus.
-
-### Interfacing LM35 Temperature Sensor:
-* **Sensitivity**: $10	ext{ mV} / ^\circ	ext{C}$ linear scale.
-  * At $25^\circ	ext{C}$, $V_{	ext{out}} = 250	ext{ mV} = 0.25	ext{V}$.
-  * At $100^\circ	ext{C}$, $V_{	ext{out}} = 1000	ext{ mV} = 1.0	ext{V}$.
-* **ADC Step Size**:
-$$	ext{Step Size} = 
-rac{V_{	ext{ref}}}{256}$$
-  If $V_{	ext{ref}} = 5.12	ext{V}$, $	ext{Step Size} = 
-rac{5.12	ext{V}}{256} = 20	ext{ mV}$.
-  If $V_{	ext{ref}} = 2.56	ext{V}$, $	ext{Step Size} = 
-rac{2.56	ext{V}}{256} = 10	ext{ mV}$.
-  * When step size $= 10	ext{ mV}$, the digital output of ADC 0808 directly equals the temperature in Celsius without complex software division!
-
----
-
-## 9.4 Digital-to-Analog Converter (DAC 0808) & Waveform Synthesis
-The **DAC 0808** produces an output analog current $I_{	ext{out}}$ proportional to an 8-bit digital input byte ($D_0 - D_7$). An external Operational Amplifier (e.g., LM741 / LM324) configured as an I-to-V converter transforms this current into an output voltage:
-$$V_{	ext{out}} = I_{	ext{out}} 	imes R_f = V_{	ext{ref}} \left( 
-rac{D_7}{2} + 
-rac{D_6}{4} + \dots + 
-rac{D_0}{256} 
-ight)$$
-
-### Waveform Generation Code in Assembly:
-
-#### 1. Sawtooth Waveform Generation:
-```assembly
-; Generates continuous Sawtooth wave on DAC connected to Port 1
-      ORG 0000H
-AGAIN:
-      MOV P1, A          ; Output digital value to DAC
-      INC A              ; Step up voltage linearly
-      SJMP AGAIN         ; Wraps around from FFH to 00H automatically
-```
-
-#### 2. Triangular Waveform Generation:
-```assembly
-; Generates symmetrical Triangular wave on Port 1
-      ORG 0000H
-      CLR A
-UP_RAMP:
-      MOV P1, A          ; Send ramp up
-      INC A
-      CJNE A, #0FFH, UP_RAMP
-DOWN_RAMP:
-      MOV P1, A          ; Send ramp down
-      DEC A
-      CJNE A, #00H, DOWN_RAMP
-      SJMP UP_RAMP
-```
-
-#### 3. Sine Wave Generation via ROM Lookup Table:
-* A lookup table containing precalculated values:
-$$	ext{LUT}[	heta] = 128 + 127 	imes \sin(	heta)$$
-  is sampled periodically and output to the DAC:
-```assembly
-      ORG 0000H
-START:
-      MOV DPTR, #SINE_TABLE
-      MOV R7, #36        ; 36 samples (10 degree intervals)
-SINE_LOOP:
-      CLR A
-      MOVC A, @A+DPTR    ; Fetch sine sample
-      MOV P1, A          ; Output to DAC
-      ACALL SAMPLE_DELAY ; Set frequency
-      INC DPTR
-      DJNZ R7, SINE_LOOP
-      SJMP START
-
-SINE_TABLE:
-      DB 128, 150, 172, 192, 210, 226, 238, 248, 254, 255
-      DB 254, 248, 238, 226, 210, 192, 172, 150, 128, 106
-      DB 84, 64, 46, 30, 18, 8, 2, 0, 2, 8
-      DB 18, 30, 46, 64, 84, 106
-```
-
----
-
-## 9.5 Stepper Motor Control with ULN2003 Driver
-A stepper motor converts digital electrical pulses into precise mechanical angular shaft rotations.
-
-```
-                  +-------------------+
-    8051 Port     |   ULN2003 Driver  |        Stepper Motor Stator Coils
-    P1.0 -------->| In 1        Out 1 |------> Coil A
-    P1.1 -------->| In 2        Out 2 |------> Coil B
-    P1.2 -------->| In 3        Out 3 |------> Coil C
-    P1.3 -------->| In 4        Out 4 |------> Coil D
-                  | COM           GND |
-                  +---+------------+--+
-                      |            |
-                    +12V          GND
-```
-
-### Why a Driver (ULN2003) is Mandatory:
-1. **Current Requirement**: An 8051 pin can sink only $10-20	ext{ mA}$. A stepper motor coil requires $200-500	ext{ mA}$.
-2. **Inductive Kickback**: When a motor coil de-energizes, $V = L 
-rac{di}{dt}$ creates a massive reverse voltage spike of several hundred volts that would instantly destroy the microcontroller. The **ULN2003** features internal high-current Darlington transistor pairs and **internal freewheeling clamp diodes** connected to its COM pin.
-
-### Excitation Step Sequences:
-1. **Standard 4-Step Sequence (Two-Phase ON / High Torque)**:
-   * Step 1: `0000 1001B` = **`09H`** (Coils A and D active)
-   * Step 2: `0000 1100B` = **`0CH`** (Coils A and B active)
-   * Step 3: `0000 0110B` = **`06H`** (Coils B and C active)
-   * Step 4: `0000 0011B` = **`03H`** (Coils C and D active)
-   * *Reversing the sequence reverses the rotational direction from Clockwise to Counter-Clockwise!*
-2. **Wave Drive (One-Phase ON / Low Power)**:
-   * Step 1: `08H`, Step 2: `04H`, Step 3: `02H`, Step 4: `01H`.
-3. **Half-Step 8-Step Sequence (Finer Resolution)**:
-   * Alternates between one phase and two phases:
-   * `09H, 08H, 0CH, 04H, 06H, 02H, 03H, 01H`.
-   * Halves the step angle (e.g., transforms a $1.8^\circ$ motor into a $0.9^\circ$ per step motor).
-
-### Speed and Direction Control:
-* **Speed**: Regulated by the time delay between successive step excitations. Shorter delay = faster RPM.
-* **Angle of Rotation**: Determined by the total number of step sequences executed.
-$$	ext{Total Steps Required} = 
-rac{	ext{Target Angle}}{	ext{Step Angle}}$$
----
-
-## 10.6 Complete LCD Display Assembly Program ("HELLO" & "Happy Diwali")
-
-```asm
-; =====================================================================
-; Interfacing 16x2 LCD to 8051 (Port 1 = Data, P2.0 = RS, P2.1 = RW, P2.2 = E)
-; Displays message "HELLO" from ROM lookup table
-; =====================================================================
-        ORG  0000H
-        LJMP MAIN
-
-        ORG  0030H
-MAIN:   MOV  SP, #60H           ; initialize stack pointer
-        ACALL LCD_INIT          ; initialize LCD display
-
-        ; Send string "HELLO" to LCD
-        MOV  DPTR, #MSG_HELLO   ; point DPTR to lookup table
-        MOV  R7,   #05H         ; 5 characters
-        MOV  R6,   #00H         ; character index
-DISP_LOOP:
-        MOV  A, R6
-        MOVC A, @A+DPTR         ; read character from ROM
-        ACALL LCD_DATA          ; send ASCII byte to LCD
-        INC  R6
-        DJNZ R7, DISP_LOOP
-
-HERE:   SJMP HERE               ; halt
-
-; ---- LCD Initialization Routine ----
-LCD_INIT:
-        MOV  A, #38H            ; 2 lines, 5x7 matrix, 8-bit mode
-        ACALL LCD_CMD
-        MOV  A, #0EH            ; display ON, cursor ON
-        ACALL LCD_CMD
-        MOV  A, #01H            ; clear display screen
-        ACALL LCD_CMD
-        MOV  A, #06H            ; entry mode: increment cursor right
-        ACALL LCD_CMD
-        MOV  A, #80H            ; cursor home (line 1, pos 0)
-        ACALL LCD_CMD
-        RET
-
-; ---- Send Command to LCD (RS=0, RW=0) ----
-LCD_CMD:
-        MOV  P1, A              ; put command on Port 1
-        CLR  P2.0               ; RS = 0 (command register)
-        CLR  P2.1               ; RW = 0 (write operation)
-        SETB P2.2               ; E = 1 (high pulse)
-        CLR  P2.2               ; E = 0 (falling edge latches command)
-        ACALL DELAY_10MS        ; wait for command execution
-        RET
-
-; ---- Send Data Character to LCD (RS=1, RW=0) ----
-LCD_DATA:
-        MOV  P1, A              ; put ASCII byte on Port 1
-        SETB P2.0               ; RS = 1 (data register)
-        CLR  P2.1               ; RW = 0 (write operation)
-        SETB P2.2               ; E = 1 (high pulse)
-        CLR  P2.2               ; E = 0 (falling edge latches data)
-        ACALL DELAY_10MS        ; wait for data write
-        RET
-
-; ---- 10 ms Software Delay Routine (11.0592 MHz) ----
-DELAY_10MS:
-        MOV  R2, #20
-D1:     MOV  R3, #230
-D2:     DJNZ R3, D2
-        DJNZ R2, D1
-        RET
-
-MSG_HELLO:
-        DB   "HELLO"
-        END
-```
-
----
-
-## 10.7 Stepper Motor Step Angle & Rotation Degree Mathematics
-
-### Step Angle Formulas:
-$$	ext{Steps per Revolution} = rac{360^\circ}{	ext{Step Angle}}$$
-
-$$	ext{Steps Required for Target Angle } 	heta = rac{	heta}{	ext{Step Angle}}$$
-
-### Exam Walkthrough 1: Rotate Stepper Motor by $117^\circ$ with $1.8^\circ$ Step Angle
-- **Given:** Step angle $= 1.8^\circ$, Target angle $	heta = 117^\circ$
-- **Calculation:**
-  $$	ext{Steps} = rac{117^\circ}{1.8^\circ} = 65	ext{ steps} = 41	ext{H}$$
-- **Full Step Mode:** We use the 4 excitation codes `33H, 66H, CCH, 99H` (or rotate `33H` left).
-- **Assembly Program:**
-```asm
-        ORG  0000H
-        MOV  R7, #41H           ; loop count = 65 decimal
-        MOV  A,  #33H           ; initial full-step excitation code
-ROT_LOOP:
-        MOV  P1, A              ; output to ULN2003 on P1.0-P1.3
-        ACALL DELAY_10MS        ; motor settling delay
-        RL   A                  ; rotate to generate next step code
-        DJNZ R7, ROT_LOOP       ; repeat 65 times (117 degrees)
-        SJMP $
-
-DELAY_10MS:
-        MOV  R1, #20
-L1:     MOV  R2, #230
-L2:     DJNZ R2, L2
-        DJNZ R1, L1
-        RET
-        END
-```
-
-### Half-Step 8-Sequence Lookup Table (for High Precision):
-For half-step mode ($0.9^\circ$ per step), the excitation sequence consists of 8 states:
-```asm
-ORG 0400H
-HALF_TAB: DB 01H, 03H, 02H, 06H, 04H, 0CH, 08H, 09H
-```
-
----
-
-## 10.8 DC Motor Interfacing with L293D Driver & Relays
-
-```
-        8051                         L293D                     DC Motor
-   ┌────────────┐               ┌─────────────┐               ┌────────┐
-   │        P1.0├──────────────►│IN1      OUT1├──────────────►│ +      │
-   │        P1.1├──────────────►│IN2      OUT2├──────────────►│ -      │
-   │        P1.2├──────────────►│EN1 (PWM)    │               └────────┘
-   └────────────┘               └─────────────┘
-```
-
-**Direction Logic Table:**
-
-| P1.0 (IN1) | P1.1 (IN2) | Motor State |
-|------------|------------|-------------|
-| 0 | 1 | Clockwise rotation |
-| 1 | 0 | Counter-clockwise rotation |
-| 0 | 0 | Fast stop / brake |
-| 1 | 1 | Fast stop / brake |
-
-**Speed Control via PWM:** P1.2 (EN1) is modulated with a pulse-width modulated (PWM) signal from Timer 0 to control motor speed linearly from 0% to 100% duty cycle.
-
----
-
-## 10.9 8255 Programmable Peripheral Interface (PPI)
-
-The **Intel 8255A** is a 24-pin programmable I/O chip designed to expand the 8051's port capabilities. It provides 24 I/O pins organized into three 8-bit ports: **Port A**, **Port B**, and **Port C** (divided into Port C Upper $PC_7-PC_4$ and Port C Lower $PC_3-PC_0$).
-
-```
-        8051 Microcontroller                   8255A PPI
-   ┌────────────────────────────┐        ┌──────────────────┐
-   │             P0 (AD0 - AD7) ├───────►│ D0 - D7          │
-   │                       ALE  ├───────►│ (via 74LS373)    │
-   │               P2.0 (A0)    ├───────►│ A0               │
-   │               P2.1 (A1)    ├───────►│ A1               │
-   │               P2.7         ├───────►│ CS (Chip Select) │
-   │               RD           ├───────►│ RD               │
-   │               WR           ├───────►│ WR               │
-   └────────────────────────────┘        └──────────────────┘
-```
-
-### 8255 Control Word Register (CWR) Format (I/O Mode):
-```
-D7    D6    D5    D4    D3    D2    D1    D0
- 1   ──Group A───  PA   PCU   ──Group B───  PB   PCL
-     Mode 0,1,2   1=In  1=In  Mode 0,1    1=In 1=In
-```
-- **$D_7 = 1$**: I/O Mode selected ($D_7 = 0$ is BSR mode — Bit Set/Reset for Port C)
-- **$D_6, D_5$**: Group A Mode Select ($00 =$ Mode 0 Basic I/O, $01 =$ Mode 1 Strobed, $1X =$ Mode 2 Bidirectional Bus)
-- **$D_4$**: Port A direction ($1 =$ Input, $0 =$ Output)
-- **$D_3$**: Port C Upper direction ($1 =$ Input, $0 =$ Output)
-- **$D_2$**: Group B Mode Select ($0 =$ Mode 0, $1 =$ Mode 1)
-- **$D_1$**: Port B direction ($1 =$ Input, $0 =$ Output)
-- **$D_0$**: Port C Lower direction ($1 =$ Input, $0 =$ Output)
-
-**Example Configuration:** Port A as output, Port B as input, Port C as output in Mode 0:
-- $D_7=1, D_6=0, D_5=0, D_4=0, D_3=0, D_2=0, D_1=1, D_0=0 \implies \mathbf{82H}$.
-
-
-# MODULE 11: COMPLETE SOLUTIONS TO 2025-26 ENDSEM EXAMINATION WITH MARKING INSIGHTS
+# MODULE 10: COMPLETE SOLUTIONS TO 2025-26 ENDSEM EXAMINATION WITH MARKING INSIGHTS
 
 This module provides exhaustive, verified solutions and examiner insights for the **Odd Semester 2025-26 End Semester Examination (Course Code: CSN15402, Embedded Systems, Department of Computer Science & Engineering, MNNIT Allahabad)**.
 
@@ -5244,7 +4833,7 @@ After RETI:
 ---
 
 
-# MODULE 12: HIGH-YIELD EXAM QUESTION BANK & NEW VARIATION PRACTICE PROBLEMS
+# MODULE 11: HIGH-YIELD EXAM QUESTION BANK & NEW VARIATION PRACTICE PROBLEMS
 
 To ensure complete mastery against any new exam questions, study these categorized variation problems with detailed solutions.
 
@@ -5354,7 +4943,7 @@ $$\text{Reload} = 256 - 92 = \mathbf{164 = 0xA4} \quad (\text{or } -92)$$
 
 ---
 
-### Additional High-Yield Solved Problem Sets (Categories A through F):
+### Additional High-Yield Solved Problem Sets (Categories A through E):
 
 ## Category A: Architecture and Registers
 
@@ -5737,7 +5326,7 @@ COL0:   MOV  A, #'1'    ; key '1' pressed
 ---
 
 
-# MODULE 13: QUICK REVISION MASTER TABLES, CHEAT SHEETS & FORMULA VAULT
+# MODULE 12: QUICK REVISION MASTER TABLES & CHEAT SHEETS
 
 ## 12.1 Master Special Function Register (SFR) Reference Table
 All 21 Special Function Registers in alphabetical order:
@@ -6111,3 +5700,440 @@ $$f_{max} = \frac{f_{osc}}{24}$$
 > - TI and RI are NOT cleared by hardware → must CLR them in your code
 > - Use RETI in ISR, not RET
 > - CJNE also sets CY even if the values are equal? No: if equal, CY=0 AND no jump
+
+
+# MODULE 13 (SUPPLEMENTARY APPENDIX): PERIPHERAL INTERFACING REFERENCE (FROM ES/ REFERENCE NOTES)
+
+> [!NOTE]
+> **Syllabus Scope Note:** The interfacing topics in this Appendix (LCD, Keypad, ADC 0808, DAC 0808, Stepper Motor, DC Motor, 8255 PPI) are sourced from the supplementary reference notes in the `es/` folder. They are NOT part of Dr. Divyansh Thakur's core lecture slides (Slide 2, Slide 3, Slide 4, Unit 4) and did not appear in the 2025-26 End Semester Exam. They are provided here solely for comprehensive engineering breadth and laboratory reference. Focus your primary exam preparation on **Modules 1 through 12**.
+
+## 9.1 16x2 Alphanumeric LCD Display Interfacing
+The 16x2 LCD based on the industry-standard **Hitachi HD44780** controller displays 2 lines of 16 ASCII characters.
+
+```mermaid
+flowchart LR
+    subgraph 8051 Microcontroller
+        P2["Port 2 (P2.0 - P2.7)"]
+        P10["P1.0 (RS Pin)"]
+        P11["P1.1 (R//W Pin)"]
+        P12["P1.2 (E Pin)"]
+    end
+
+    subgraph 16x2 LCD Module (HD44780)
+        D["Data Bus (D0 - D7)"]
+        RS["RS (Register Select)"]
+        RW["R//W (Read / Write)"]
+        E["E (Enable Latch Strobe)"]
+        VEE["VEE (Contrast Pin)"]
+    end
+
+    P2 --> D
+    P10 --> RS
+    P11 --> RW
+    P12 --> E
+```
+
+### Pin Functions of 16x2 LCD:
+* **Pin 1 ($V_{SS}$)**: Ground ($0	ext{V}$).
+* **Pin 2 ($V_{DD}$)**: Power supply ($+5	ext{V}$).
+* **Pin 3 ($V_{EE}$)**: Contrast adjustment voltage (connected to center tap of a $10	ext{ k}\Omega$ potentiometer between $V_{CC}$ and $GND$).
+* **Pin 4 ($RS$ - Register Select)**:
+  * **$RS = 0$**: Command / Instruction Register selected (to clear display, set cursor, initialize).
+  * **$RS = 1$**: Data Register selected (bytes written are displayed on screen as ASCII characters).
+* **Pin 5 ($R/\overline{W}$ - Read / Write)**:
+  * **$R/\overline{W} = 0$**: Write operation (8051 sends command or data to LCD).
+  * **$R/\overline{W} = 1$**: Read operation (8051 reads data or reads Busy Flag $BF$).
+* **Pin 6 ($E$ - Enable Strobe)**:
+  * High-to-Low transition latch clock. Data/Command present on $D_0-D_7$ is latched into the LCD on the **falling edge** of an Enable pulse (width $\ge 450	ext{ ns}$).
+* **Pins 7-14 ($D_0 - D_7$)**: 8-bit bidirectional data bus.
+* **Pins 15-16**: Backlight LED Anode ($+5	ext{V}$) and Cathode ($GND$).
+
+### Essential Command Hex Codes:
+| Command Hex | Action |
+|---|---|
+| **`38H`** | **Function Set**: 8-bit bus mode, 2 display lines, $5 	imes 7$ dot font |
+| **`0EH`** | Display ON, Cursor ON, Cursor Blink OFF |
+| **`0CH`** | Display ON, Cursor OFF |
+| **`01H`** | **Clear Entire Display Screen** and return cursor to Home ($00H$) |
+| **`06H`** | **Entry Mode**: Increment cursor position to the right after each character |
+| **`80H`** | Force cursor to beginning of **Line 1** (DDRAM address $00H$) |
+| **`C0H`** | Force cursor to beginning of **Line 2** (DDRAM address $40H$) |
+
+### Checking the Busy Flag (BF on Pin $D_7$):
+Before sending any command or character, the microcontroller must ensure the internal controller has finished processing the prior operation.
+* Read with $RS = 0$ and $R/\overline{W} = 1$.
+* If bit $D_7 = 1$, the LCD is **busy**; wait in loop.
+* If bit $D_7 = 0$, the LCD is ready for the next byte. Alternatively, a $2	ext{ ms}$ software delay can be used after each command.
+
+---
+
+## 9.2 4x4 Matrix Keyboard Interfacing
+Keyboards arranged in an $X-Y$ matrix drastically reduce required I/O pins: 16 individual switches require 16 pins, whereas a $4 	imes 4$ matrix requires only **8 pins** (4 row outputs, 4 column inputs).
+
+```
+          P1.4 (Col 0)   P1.5 (Col 1)   P1.6 (Col 2)   P1.7 (Col 3)
+               |              |              |              |
+   P1.0 (R0) --+--[ '0' ]-----+--[ '1' ]-----+--[ '2' ]-----+--[ '3' ]--
+               |              |              |              |
+   P1.1 (R1) --+--[ '4' ]-----+--[ '5' ]-----+--[ '6' ]-----+--[ '7' ]--
+               |              |              |              |
+   P1.2 (R2) --+--[ '8' ]-----+--[ '9' ]-----+--[ 'A' ]-----+--[ 'B' ]--
+               |              |              |              |
+   P1.3 (R3) --+--[ 'C' ]-----+--[ 'D' ]-----+--[ 'E' ]-----+--[ 'F' ]--
+               |              |              |              |
+             [Pull-ups to +5V on Col lines P1.4 - P1.7]
+```
+
+### Complete 2-Step Key Detection & Identification Algorithm:
+1. **Step 1: Check if ANY Key is Pressed**:
+   * Ground all rows by outputting `0000B` on rows ($P1.0-P1.3 = 0$).
+   * Configure columns as inputs with pull-ups ($P1.4-P1.7 = 1$).
+   * Read columns: If all columns read `1` ($1111B$), no key is pressed. If any column reads `0`, a key is pressed!
+   * Call a $20	ext{ ms}$ software delay to eliminate switch contact bounce (**Debouncing**).
+2. **Step 2: Identify the Exact Key (Row & Column Scanning)**:
+   * Ground one row at a time while driving other rows HIGH:
+     * Ground Row 0 ($P1 = 1111\ 1110B$). Read columns. If a column is `0`, the key is in Row 0!
+     * Ground Row 1 ($P1 = 1111\ 1101B$). Read columns.
+     * Ground Row 2 ($P1 = 1111\ 1011B$). Read columns.
+     * Ground Row 3 ($P1 = 1111\ 0111B$). Read columns.
+   * Once row and column are known, look up the ASCII character from a ROM table!
+
+---
+
+## 9.3 8-Bit Analog-to-Digital Converter (ADC 0808/0809) & LM35 Sensor
+
+The **ADC 0808 / 0809** is an 8-bit Successive Approximation Register (SAR) ADC featuring an 8-channel multiplexed analog input.
+
+```mermaid
+flowchart LR
+    LM35["LM35 Temp Sensor<br/>(10 mV / °C)"] --> IN0["IN0 Pin"]
+    
+    subgraph ADC 0808 / 0809
+        IN0
+        ABC["Address Lines (A, B, C)"]
+        ALE["ALE (Address Latch Enable)"]
+        SOC["START (Start of Conversion)"]
+        EOC["EOC (End of Conversion)"]
+        OE["OE (Output Enable)"]
+        DATA["Digital Output (D0 - D7)"]
+    end
+
+    subgraph 8051 Microcontroller
+        P0["Port 0 (D0 - D7)"]
+        P20["P2.0 (A)"]
+        P21["P2.1 (B)"]
+        P22["P2.2 (C)"]
+        P23["P2.3 (ALE & START)"]
+        P24["P2.4 (EOC)"]
+        P25["P2.5 (OE)"]
+    end
+
+    ABC <--> P20 & P21 & P22
+    ALE & SOC <--> P23
+    EOC --> P24
+    OE <-- P25
+    DATA --> P0
+```
+
+### Control Pins of ADC 0808:
+* **$A, B, C$**: 3-bit channel selector selecting analog input channel from $IN_0$ ($000B$) to $IN_7$ ($111B$).
+* **$ALE$ (Address Latch Enable)**: Latches channel address $A, B, C$ on LOW-to-HIGH edge.
+* **$START$ (Start of Conversion - SOC)**: HIGH-to-LOW pulse starts the conversion process. Typically tied directly to $ALE$.
+* **$EOC$ (End of Conversion)**: Output pin from ADC. Normally HIGH. Goes LOW immediately after conversion starts, and **returns HIGH** when conversion finishes and the 8-bit result is ready in the internal register.
+* **$OE$ (Output Enable)**: Active-HIGH input to ADC. Driving $OE = 1$ places digital outputs $D_0-D_7$ onto the 8051 bus.
+
+### Interfacing LM35 Temperature Sensor:
+* **Sensitivity**: $10	ext{ mV} / ^\circ	ext{C}$ linear scale.
+  * At $25^\circ	ext{C}$, $V_{	ext{out}} = 250	ext{ mV} = 0.25	ext{V}$.
+  * At $100^\circ	ext{C}$, $V_{	ext{out}} = 1000	ext{ mV} = 1.0	ext{V}$.
+* **ADC Step Size**:
+$$	ext{Step Size} = 
+rac{V_{	ext{ref}}}{256}$$
+  If $V_{	ext{ref}} = 5.12	ext{V}$, $	ext{Step Size} = 
+rac{5.12	ext{V}}{256} = 20	ext{ mV}$.
+  If $V_{	ext{ref}} = 2.56	ext{V}$, $	ext{Step Size} = 
+rac{2.56	ext{V}}{256} = 10	ext{ mV}$.
+  * When step size $= 10	ext{ mV}$, the digital output of ADC 0808 directly equals the temperature in Celsius without complex software division!
+
+---
+
+## 9.4 Digital-to-Analog Converter (DAC 0808) & Waveform Synthesis
+The **DAC 0808** produces an output analog current $I_{	ext{out}}$ proportional to an 8-bit digital input byte ($D_0 - D_7$). An external Operational Amplifier (e.g., LM741 / LM324) configured as an I-to-V converter transforms this current into an output voltage:
+$$V_{	ext{out}} = I_{	ext{out}} 	imes R_f = V_{	ext{ref}} \left( 
+rac{D_7}{2} + 
+rac{D_6}{4} + \dots + 
+rac{D_0}{256} 
+ight)$$
+
+### Waveform Generation Code in Assembly:
+
+#### 1. Sawtooth Waveform Generation:
+```assembly
+; Generates continuous Sawtooth wave on DAC connected to Port 1
+      ORG 0000H
+AGAIN:
+      MOV P1, A          ; Output digital value to DAC
+      INC A              ; Step up voltage linearly
+      SJMP AGAIN         ; Wraps around from FFH to 00H automatically
+```
+
+#### 2. Triangular Waveform Generation:
+```assembly
+; Generates symmetrical Triangular wave on Port 1
+      ORG 0000H
+      CLR A
+UP_RAMP:
+      MOV P1, A          ; Send ramp up
+      INC A
+      CJNE A, #0FFH, UP_RAMP
+DOWN_RAMP:
+      MOV P1, A          ; Send ramp down
+      DEC A
+      CJNE A, #00H, DOWN_RAMP
+      SJMP UP_RAMP
+```
+
+#### 3. Sine Wave Generation via ROM Lookup Table:
+* A lookup table containing precalculated values:
+$$	ext{LUT}[	heta] = 128 + 127 	imes \sin(	heta)$$
+  is sampled periodically and output to the DAC:
+```assembly
+      ORG 0000H
+START:
+      MOV DPTR, #SINE_TABLE
+      MOV R7, #36        ; 36 samples (10 degree intervals)
+SINE_LOOP:
+      CLR A
+      MOVC A, @A+DPTR    ; Fetch sine sample
+      MOV P1, A          ; Output to DAC
+      ACALL SAMPLE_DELAY ; Set frequency
+      INC DPTR
+      DJNZ R7, SINE_LOOP
+      SJMP START
+
+SINE_TABLE:
+      DB 128, 150, 172, 192, 210, 226, 238, 248, 254, 255
+      DB 254, 248, 238, 226, 210, 192, 172, 150, 128, 106
+      DB 84, 64, 46, 30, 18, 8, 2, 0, 2, 8
+      DB 18, 30, 46, 64, 84, 106
+```
+
+---
+
+## 9.5 Stepper Motor Control with ULN2003 Driver
+A stepper motor converts digital electrical pulses into precise mechanical angular shaft rotations.
+
+```
+                  +-------------------+
+    8051 Port     |   ULN2003 Driver  |        Stepper Motor Stator Coils
+    P1.0 -------->| In 1        Out 1 |------> Coil A
+    P1.1 -------->| In 2        Out 2 |------> Coil B
+    P1.2 -------->| In 3        Out 3 |------> Coil C
+    P1.3 -------->| In 4        Out 4 |------> Coil D
+                  | COM           GND |
+                  +---+------------+--+
+                      |            |
+                    +12V          GND
+```
+
+### Why a Driver (ULN2003) is Mandatory:
+1. **Current Requirement**: An 8051 pin can sink only $10-20	ext{ mA}$. A stepper motor coil requires $200-500	ext{ mA}$.
+2. **Inductive Kickback**: When a motor coil de-energizes, $V = L 
+rac{di}{dt}$ creates a massive reverse voltage spike of several hundred volts that would instantly destroy the microcontroller. The **ULN2003** features internal high-current Darlington transistor pairs and **internal freewheeling clamp diodes** connected to its COM pin.
+
+### Excitation Step Sequences:
+1. **Standard 4-Step Sequence (Two-Phase ON / High Torque)**:
+   * Step 1: `0000 1001B` = **`09H`** (Coils A and D active)
+   * Step 2: `0000 1100B` = **`0CH`** (Coils A and B active)
+   * Step 3: `0000 0110B` = **`06H`** (Coils B and C active)
+   * Step 4: `0000 0011B` = **`03H`** (Coils C and D active)
+   * *Reversing the sequence reverses the rotational direction from Clockwise to Counter-Clockwise!*
+2. **Wave Drive (One-Phase ON / Low Power)**:
+   * Step 1: `08H`, Step 2: `04H`, Step 3: `02H`, Step 4: `01H`.
+3. **Half-Step 8-Step Sequence (Finer Resolution)**:
+   * Alternates between one phase and two phases:
+   * `09H, 08H, 0CH, 04H, 06H, 02H, 03H, 01H`.
+   * Halves the step angle (e.g., transforms a $1.8^\circ$ motor into a $0.9^\circ$ per step motor).
+
+### Speed and Direction Control:
+* **Speed**: Regulated by the time delay between successive step excitations. Shorter delay = faster RPM.
+* **Angle of Rotation**: Determined by the total number of step sequences executed.
+$$	ext{Total Steps Required} = 
+rac{	ext{Target Angle}}{	ext{Step Angle}}$$
+---
+
+## 13.6 Complete LCD Display Assembly Program ("HELLO" & "Happy Diwali")
+
+```asm
+; =====================================================================
+; Interfacing 16x2 LCD to 8051 (Port 1 = Data, P2.0 = RS, P2.1 = RW, P2.2 = E)
+; Displays message "HELLO" from ROM lookup table
+; =====================================================================
+        ORG  0000H
+        LJMP MAIN
+
+        ORG  0030H
+MAIN:   MOV  SP, #60H           ; initialize stack pointer
+        ACALL LCD_INIT          ; initialize LCD display
+
+        ; Send string "HELLO" to LCD
+        MOV  DPTR, #MSG_HELLO   ; point DPTR to lookup table
+        MOV  R7,   #05H         ; 5 characters
+        MOV  R6,   #00H         ; character index
+DISP_LOOP:
+        MOV  A, R6
+        MOVC A, @A+DPTR         ; read character from ROM
+        ACALL LCD_DATA          ; send ASCII byte to LCD
+        INC  R6
+        DJNZ R7, DISP_LOOP
+
+HERE:   SJMP HERE               ; halt
+
+; ---- LCD Initialization Routine ----
+LCD_INIT:
+        MOV  A, #38H            ; 2 lines, 5x7 matrix, 8-bit mode
+        ACALL LCD_CMD
+        MOV  A, #0EH            ; display ON, cursor ON
+        ACALL LCD_CMD
+        MOV  A, #01H            ; clear display screen
+        ACALL LCD_CMD
+        MOV  A, #06H            ; entry mode: increment cursor right
+        ACALL LCD_CMD
+        MOV  A, #80H            ; cursor home (line 1, pos 0)
+        ACALL LCD_CMD
+        RET
+
+; ---- Send Command to LCD (RS=0, RW=0) ----
+LCD_CMD:
+        MOV  P1, A              ; put command on Port 1
+        CLR  P2.0               ; RS = 0 (command register)
+        CLR  P2.1               ; RW = 0 (write operation)
+        SETB P2.2               ; E = 1 (high pulse)
+        CLR  P2.2               ; E = 0 (falling edge latches command)
+        ACALL DELAY_10MS        ; wait for command execution
+        RET
+
+; ---- Send Data Character to LCD (RS=1, RW=0) ----
+LCD_DATA:
+        MOV  P1, A              ; put ASCII byte on Port 1
+        SETB P2.0               ; RS = 1 (data register)
+        CLR  P2.1               ; RW = 0 (write operation)
+        SETB P2.2               ; E = 1 (high pulse)
+        CLR  P2.2               ; E = 0 (falling edge latches data)
+        ACALL DELAY_10MS        ; wait for data write
+        RET
+
+; ---- 10 ms Software Delay Routine (11.0592 MHz) ----
+DELAY_10MS:
+        MOV  R2, #20
+D1:     MOV  R3, #230
+D2:     DJNZ R3, D2
+        DJNZ R2, D1
+        RET
+
+MSG_HELLO:
+        DB   "HELLO"
+        END
+```
+
+---
+
+## 13.7 Stepper Motor Step Angle & Rotation Degree Mathematics
+
+### Step Angle Formulas:
+$$\text{Steps per Revolution} = \frac{360^\circ}{\text{Step Angle}}$$
+
+$$\text{Steps Required for Target Angle } \theta = \frac{\theta}{\text{Step Angle}}$$
+
+### Exam Walkthrough 1: Rotate Stepper Motor by $117^\circ$ with $1.8^\circ$ Step Angle
+- **Given:** Step angle $= 1.8^\circ$, Target angle $\theta = 117^\circ$
+- **Calculation:**
+  $$\text{Steps} = \frac{117^\circ}{1.8^\circ} = 65\text{ steps} = 41\text{H}$$
+- **Full Step Mode:** We use the 4 excitation codes `33H, 66H, CCH, 99H` (or rotate `33H` left).
+- **Assembly Program:**
+```asm
+        ORG  0000H
+        MOV  R7, #41H           ; loop count = 65 decimal
+        MOV  A,  #33H           ; initial full-step excitation code
+ROT_LOOP:
+        MOV  P1, A              ; output to ULN2003 on P1.0-P1.3
+        ACALL DELAY_10MS        ; motor settling delay
+        RL   A                  ; rotate to generate next step code
+        DJNZ R7, ROT_LOOP       ; repeat 65 times (117 degrees)
+        SJMP $
+
+DELAY_10MS:
+        MOV  R1, #20
+L1:     MOV  R2, #230
+L2:     DJNZ R2, L2
+        DJNZ R1, L1
+        RET
+        END
+```
+
+### Half-Step 8-Sequence Lookup Table (for High Precision):
+For half-step mode ($0.9^\circ$ per step), the excitation sequence consists of 8 states:
+```asm
+ORG 0400H
+HALF_TAB: DB 01H, 03H, 02H, 06H, 04H, 0CH, 08H, 09H
+```
+
+---
+
+## 13.8 DC Motor Interfacing with L293D Driver & Relays
+
+```
+        8051                         L293D                     DC Motor
+   ┌────────────┐               ┌─────────────┐               ┌────────┐
+   │        P1.0├──────────────►│IN1      OUT1├──────────────►│ +      │
+   │        P1.1├──────────────►│IN2      OUT2├──────────────►│ -      │
+   │        P1.2├──────────────►│EN1 (PWM)    │               └────────┘
+   └────────────┘               └─────────────┘
+```
+
+**Direction Logic Table:**
+
+| P1.0 (IN1) | P1.1 (IN2) | Motor State |
+|------------|------------|-------------|
+| 0 | 1 | Clockwise rotation |
+| 1 | 0 | Counter-clockwise rotation |
+| 0 | 0 | Fast stop / brake |
+| 1 | 1 | Fast stop / brake |
+
+**Speed Control via PWM:** P1.2 (EN1) is modulated with a pulse-width modulated (PWM) signal from Timer 0 to control motor speed linearly from 0% to 100% duty cycle.
+
+---
+
+## 13.9 8255 Programmable Peripheral Interface (PPI)
+
+The **Intel 8255A** is a 24-pin programmable I/O chip designed to expand the 8051's port capabilities. It provides 24 I/O pins organized into three 8-bit ports: **Port A**, **Port B**, and **Port C** (divided into Port C Upper $PC_7-PC_4$ and Port C Lower $PC_3-PC_0$).
+
+```
+        8051 Microcontroller                   8255A PPI
+   ┌────────────────────────────┐        ┌──────────────────┐
+   │             P0 (AD0 - AD7) ├───────►│ D0 - D7          │
+   │                       ALE  ├───────►│ (via 74LS373)    │
+   │               P2.0 (A0)    ├───────►│ A0               │
+   │               P2.1 (A1)    ├───────►│ A1               │
+   │               P2.7         ├───────►│ CS (Chip Select) │
+   │               RD           ├───────►│ RD               │
+   │               WR           ├───────►│ WR               │
+   └────────────────────────────┘        └──────────────────┘
+```
+
+### 8255 Control Word Register (CWR) Format (I/O Mode):
+```
+D7    D6    D5    D4    D3    D2    D1    D0
+ 1   ──Group A───  PA   PCU   ──Group B───  PB   PCL
+     Mode 0,1,2   1=In  1=In  Mode 0,1    1=In 1=In
+```
+- **$D_7 = 1$**: I/O Mode selected ($D_7 = 0$ is BSR mode — Bit Set/Reset for Port C)
+- **$D_6, D_5$**: Group A Mode Select ($00 =$ Mode 0 Basic I/O, $01 =$ Mode 1 Strobed, $1X =$ Mode 2 Bidirectional Bus)
+- **$D_4$**: Port A direction ($1 =$ Input, $0 =$ Output)
+- **$D_3$**: Port C Upper direction ($1 =$ Input, $0 =$ Output)
+- **$D_2$**: Group B Mode Select ($0 =$ Mode 0, $1 =$ Mode 1)
+- **$D_1$**: Port B direction ($1 =$ Input, $0 =$ Output)
+- **$D_0$**: Port C Lower direction ($1 =$ Input, $0 =$ Output)
+
+**Example Configuration:** Port A as output, Port B as input, Port C as output in Mode 0:
+- $D_7=1, D_6=0, D_5=0, D_4=0, D_3=0, D_2=0, D_1=1, D_0=0 \implies \mathbf{82H}$.
